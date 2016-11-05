@@ -8,6 +8,8 @@
 
 #import "WBMainViewController.h"
 
+#import "WBNavigationController.h"
+
 @interface WBMainViewController ()
 
 @end
@@ -19,6 +21,9 @@
     
     // 设置全局数据
     self.tabBar.tintColor = [UIColor orangeColor];
+    
+    // 通过全局设置  字体及图片
+//    [UITabBarItem appearance] setTitleTextAttributes:<#(nullable NSDictionary<NSString *,id> *)#> forState:<#(UIControlState)#>
   
     
     // 添加子控制器
@@ -31,6 +36,7 @@
 {
     NSArray *vcs = @[@{@"vcName":@"WBHomeViewController",@"title":@"首页",@"imageName":@"tabbar_home"},
                      @{@"vcName":@"WBMessageViewController",@"title":@"消息",@"imageName":@"tabbar_message_center"},
+                     @{@"vcName":@"UIViewController",@"title":@"",@"imageName":@""},
                      @{@"vcName":@"WBDiscoverViewController",@"title":@"发现",@"imageName":@"tabbar_discover"},
                      @{@"vcName":@"WBProfileViewController",@"title":@"我",@"imageName":@"tabbar_profile"}
                      ];
@@ -56,8 +62,10 @@
     name = [name stringByAppendingString:@"_selected"];
     vc.tabBarItem.selectedImage = [UIImage imageNamed:name];
     
+    WBNavigationController *nav = [[WBNavigationController alloc]initWithRootViewController:vc];
+    
     // 添加
-    [self addChildViewController:vc];
+    [self addChildViewController:nav];
 }
 
 
