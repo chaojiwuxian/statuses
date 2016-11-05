@@ -16,22 +16,49 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    // 设置全局数据
+    self.tabBar.tintColor = [UIColor orangeColor];
+  
+    
+    // 添加子控制器
+    [self addChildViewControllers];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+#pragma mark 添加子控制器
+- (void)addChildViewControllers
+{
+    NSArray *vcs = @[@{@"vcName":@"WBHomeViewController",@"title":@"首页",@"imageName":@"tabbar_home"},
+                     @{@"vcName":@"WBMessageViewController",@"title":@"消息",@"imageName":@"tabbar_message_center"},
+                     @{@"vcName":@"WBDiscoverViewController",@"title":@"发现",@"imageName":@"tabbar_discover"},
+                     @{@"vcName":@"WBProfileViewController",@"title":@"我",@"imageName":@"tabbar_profile"}
+                     ];
+    
+    for (int i = 0; i < vcs.count; i++) {
+        [self addChildViewControllerWithDict:vcs[i]];
+    }
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+// 添加一个控制器
+- (void)addChildViewControllerWithDict:(NSDictionary *)dict
+{
+    Class c = NSClassFromString(dict[@"vcName"]);
+    
+    UIViewController *vc = [[c alloc]init];
+    // 添加断言 判断传过来的是否为控制类型
+    NSAssert([vc isKindOfClass:[UIViewController class]], @"不是一个控制器的类");
+    
+    // 设置数据
+    vc.title = dict[@"title"];
+    NSString *name = dict[@"imageName"];
+    vc.tabBarItem.image = [UIImage imageNamed:name];
+    name = [name stringByAppendingString:@"_selected"];
+    vc.tabBarItem.selectedImage = [UIImage imageNamed:name];
+    
+    // 添加
+    [self addChildViewController:vc];
 }
-*/
+
 
 @end
