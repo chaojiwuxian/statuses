@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "WBMainViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -17,6 +17,16 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    // 创建窗口
+    // 创建跟控制器 并显示
+    
+    self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    WBMainViewController *mainVc = [[WBMainViewController alloc]init];
+    self.window.rootViewController = mainVc;
+    
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 

@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  WBMainViewController.h
 //  LiuChaoWeibo
 //
 //  Created by apple on 16/11/5.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface WBMainViewController : UITabBarController
 
 @end
-
