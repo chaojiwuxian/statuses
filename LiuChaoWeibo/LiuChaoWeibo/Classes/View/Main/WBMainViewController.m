@@ -12,6 +12,8 @@
 
 @interface WBMainViewController ()
 
+@property (nonatomic, strong) UIButton  *composeButton;
+
 @end
 
 @implementation WBMainViewController
@@ -25,9 +27,29 @@
     // 通过全局设置  字体及图片
 //    [UITabBarItem appearance] setTitleTextAttributes:<#(nullable NSDictionary<NSString *,id> *)#> forState:<#(UIControlState)#>
   
-    
     // 添加子控制器
     [self addChildViewControllers];
+    
+    
+    // 添加中间加号按钮  设置位置
+    NSUInteger count = self.childViewControllers.count;
+    CGFloat w = self.tabBar.bounds.size.width / count - 1;
+    self.composeButton.frame = CGRectInset(self.tabBar.bounds, w * 2 , 0);
+}
+
+#pragma mark 特殊处理
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    // 调整加号按钮的位置
+    [self.tabBar bringSubviewToFront:self.composeButton];
+}
+
+#pragma mark 加号按钮的点击事件
+- (void)composeButtonClick
+{
+    NSLog(@"composeButtonClick");
 }
 
 
@@ -68,5 +90,22 @@
     [self addChildViewController:nav];
 }
 
+#pragma mark 添加在撰写按钮
+
+- (UIButton *)composeButton
+{
+    if (_composeButton == nil) {
+     
+        _composeButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_composeButton setBackgroundImage:[UIImage imageNamed:@"tabbar_compose_button"] forState:UIControlStateNormal];
+        [_composeButton setBackgroundImage:[UIImage imageNamed:@"tabbar_compose_button_highlighted"] forState:UIControlStateHighlighted];
+        
+        [_composeButton setImage:[UIImage imageNamed:@"tabbar_compose_icon_add"] forState:UIControlStateNormal];
+        [_composeButton setImage:[UIImage imageNamed:@"tabbar_compose_icon_add_highlighted"] forState:UIControlStateHighlighted];
+        [_composeButton addTarget:self action:@selector(composeButtonClick) forControlEvents:UIControlEventTouchUpInside];
+        [self.tabBar addSubview:_composeButton];
+    }
+    return _composeButton;
+}
 
 @end
