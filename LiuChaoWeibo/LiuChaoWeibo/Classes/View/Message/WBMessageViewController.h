@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface WBMessageViewController : UITableViewController
+#import "WBBaseViewController.h"
+@interface WBMessageViewController : WBBaseViewController
 
 @end

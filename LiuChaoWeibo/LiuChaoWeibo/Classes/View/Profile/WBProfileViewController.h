@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface WBProfileViewController : UITableViewController
+#import "WBBaseViewController.h"
+@interface WBProfileViewController : WBBaseViewController
 
 @end

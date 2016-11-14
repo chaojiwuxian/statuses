@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface WBDiscoverViewController : UITableViewController
+#import "WBBaseViewController.h"
+@interface WBDiscoverViewController : WBBaseViewController
 
 @end

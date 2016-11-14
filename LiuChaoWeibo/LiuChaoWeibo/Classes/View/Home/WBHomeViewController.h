@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface WBHomeViewController : UITableViewController
+#import "WBBaseViewController.h"
+@interface WBHomeViewController : WBBaseViewController
 
 @end
