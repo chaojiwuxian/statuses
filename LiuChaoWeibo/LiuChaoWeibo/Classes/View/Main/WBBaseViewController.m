@@ -10,7 +10,6 @@
 
 @interface WBBaseViewController ()<UITableViewDelegate,UITableViewDataSource>
 
-@property (nonatomic, strong) UITableView *tableView;
 
 @end
 
@@ -21,10 +20,14 @@
     
     self.view.backgroundColor = [UIColor colorWithRed:((float)arc4random_uniform(256) / 255.0) green:((float)arc4random_uniform(256) / 255.0) blue:((float)arc4random_uniform(256) / 255.0) alpha:1.0];
     
-    
     [self setUpTableView];
 }
 
+// 加载数据
+- (void)loadData
+{
+    
+}
 
 // 添加tableView
 -(void)setUpTableView

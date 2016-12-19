@@ -34,6 +34,7 @@
     // 添加中间加号按钮  设置位置
     NSUInteger count = self.childViewControllers.count;
     CGFloat w = self.tabBar.bounds.size.width / count - 1;
+    
     self.composeButton.frame = CGRectInset(self.tabBar.bounds, w * 2 , 0);
 }
 
