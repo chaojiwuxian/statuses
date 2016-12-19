@@ -8,7 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
+@class WBVisitorView;
+@protocol WBVisitorViewDelegate<NSObject>
+
+- (void)visitorView:(WBVisitorView *)view;
+
+@end
+
 @interface WBVisitorView : UIView
+
+
+// 代理属性
+@property (nonatomic, weak) id <WBVisitorViewDelegate> delegate;
 
 
 // 设置内容

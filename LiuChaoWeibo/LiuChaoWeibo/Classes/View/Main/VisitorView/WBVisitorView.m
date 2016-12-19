@@ -57,6 +57,19 @@
 }
 
 
+// 注册按钮和登录按钮的点击事件
+- (void)btnClick
+{
+   // 利用代理 把事件传递到控制器
+    
+    if ([self.delegate respondsToSelector:@selector(visitorView:)]) {
+        
+        [self.delegate visitorView:self];
+    }
+    
+}
+
+
 // 添加动画
 - (void)addAnimation
 {
@@ -99,12 +112,14 @@
     [registerButton setTitle:@"注册" forState:UIControlStateNormal];
     [registerButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [self addSubview:registerButton];
+    [registerButton addTarget:self action:@selector(btnClick) forControlEvents:UIControlEventTouchUpInside];
     
     // 登录按钮
     UIButton *loginButton = [UIButton  buttonWithType:UIButtonTypeCustom];
     [loginButton setTitle:@"登录" forState:UIControlStateNormal];
     [loginButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [self addSubview:loginButton];
+    [loginButton addTarget:self action:@selector(btnClick) forControlEvents:UIControlEventTouchUpInside];
     
     
     // 记录属性

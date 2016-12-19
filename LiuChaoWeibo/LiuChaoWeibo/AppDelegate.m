@@ -16,7 +16,10 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    // 设置全局的导航条
+    UINavigationBar *bar =  [UINavigationBar appearance];
+    bar.tintColor = [UIColor orangeColor];
     
     // 创建窗口
     // 创建跟控制器 并显示
