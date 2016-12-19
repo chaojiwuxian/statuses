@@ -10,4 +10,8 @@
 
 @interface WBVisitorView : UIView
 
+
+// 设置内容
+- (void)setUpViewContent:(NSString *)title andCircleImageName:(NSString *)name andHomeImageName:(NSString *)homeName;
+
 @end

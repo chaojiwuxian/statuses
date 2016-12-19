@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "WBVisitorView.h"
 @interface WBBaseViewController : UITableViewController
 
 
+// 记录访客视图
+@property (nonatomic, weak)WBVisitorView *visitorView;
 
 @end

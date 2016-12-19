@@ -7,8 +7,8 @@
 //
 
 #import "WBHomeViewController.h"
+#import "WBVisitorView.h"
 
-#import <AFNetworking.h>
 @interface WBHomeViewController ()
 
 @end
@@ -17,8 +17,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    [self setUpUI];
+
+    [self.visitorView  setUpViewContent:@"关注一些人,在这里看看有什么惊喜\n关注一些人,在这里看看有什么惊喜" andCircleImageName:@"visitordiscover_feed_image_smallicon" andHomeImageName:@"visitordiscover_feed_image_house"];
 
 }
 
@@ -26,11 +26,6 @@
 
 
 #pragma mark 设置界面
-- (void)setUpUI
-{
-    UIButton *btn  = [UIButton buttonWithType:UIButtonTypeCustom];
-    
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:btn];
-}
+
 
 @end

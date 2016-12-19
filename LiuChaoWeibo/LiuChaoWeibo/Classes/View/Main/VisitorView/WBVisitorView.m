@@ -38,6 +38,24 @@
     return self;
 }
 
+#pragma mark  重新设置数据
+- (void)setUpViewContent:(NSString *)title andCircleImageName:(NSString *)name andHomeImageName:(NSString *)homeName
+{
+    self.titleLabel.text = title;
+    self.circleImageView.image = [UIImage imageNamed:name];
+    
+    if (homeName == nil) {
+        // 说明不是首页
+     // 隐藏房子视图
+        self.homeImageView.hidden = YES;
+    }else{
+     
+        // 是首页
+        // 添加动画
+        [self addAnimation];
+    }
+}
+
 
 // 添加动画
 - (void)addAnimation

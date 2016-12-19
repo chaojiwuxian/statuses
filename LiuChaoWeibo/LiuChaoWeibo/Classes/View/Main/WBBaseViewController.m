@@ -7,13 +7,10 @@
 //
 
 #import "WBBaseViewController.h"
-#import "WBVisitorView.h"
+
 @interface WBBaseViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic, assign) BOOL isLogin;
-
-// 记录访客视图
-@property (nonatomic, weak)WBVisitorView *v;
 
 @end
 
@@ -36,9 +33,9 @@
         [super loadView];
     }else{
         
-        WBVisitorView *v = [[WBVisitorView alloc]init];
-   
-        self.view = v;
+        WBVisitorView *visitorView = [[WBVisitorView alloc]init];
+        self.visitorView = visitorView;
+        self.view = visitorView;
     }
 }
 
