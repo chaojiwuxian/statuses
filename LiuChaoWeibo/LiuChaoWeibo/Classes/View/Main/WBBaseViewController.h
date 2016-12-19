@@ -8,14 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WBBaseViewController : UIViewController
+@interface WBBaseViewController : UITableViewController
 
-@property (nonatomic, strong) NSArray *datas;
 
-@property (nonatomic, strong) UITableView *tableView;
-- (void)loadData;
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView;
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
 @end

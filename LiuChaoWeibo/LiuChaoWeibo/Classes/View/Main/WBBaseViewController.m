@@ -7,39 +7,45 @@
 //
 
 #import "WBBaseViewController.h"
-
+#import "WBVisitorView.h"
 @interface WBBaseViewController ()<UITableViewDelegate,UITableViewDataSource>
 
+@property (nonatomic, assign) BOOL isLogin;
+
+// 记录访客视图
+@property (nonatomic, weak)WBVisitorView *v;
 
 @end
 
 @implementation WBBaseViewController
 
+- (instancetype)init
+{
+    if (self = [super init]) {
+        // 设置登录状态
+        self.isLogin = NO;
+    }
+    return self;
+}
+
+#pragma mark 重写方法 设置控制器的跟视图
+- (void)loadView
+{
+    if (self.isLogin) {
+        
+        [super loadView];
+    }else{
+        
+        WBVisitorView *v = [[WBVisitorView alloc]init];
+   
+        self.view = v;
+    }
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = [UIColor colorWithRed:((float)arc4random_uniform(256) / 255.0) green:((float)arc4random_uniform(256) / 255.0) blue:((float)arc4random_uniform(256) / 255.0) alpha:1.0];
-    
-    [self setUpTableView];
 }
-
-// 加载数据
-- (void)loadData
-{
-    
-}
-
-// 添加tableView
--(void)setUpTableView
-{
-    _tableView = [[UITableView alloc]init];
-    
-    _tableView.frame = self.view.bounds;
-    _tableView.delegate = self;
-    _tableView.dataSource = self;
-    [self.view addSubview:_tableView];
-}
-
 
 #pragma mark 数据源方法及代理方法
 
