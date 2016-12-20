@@ -8,6 +8,7 @@
 
 #import "WBOAuthViewController.h"
 #import <AFNetworking.h>
+#import <SVProgressHUD.h>
 
 #define client_id      @"2749473729"
 #define client_secret  @"895a0f3e5034ff56832a6746f1d9c9c8"
@@ -86,14 +87,31 @@
     return YES;
 }
 
+- (void)webViewDidStartLoad:(UIWebView *)webView
+{
+
+    [SVProgressHUD show];
+}
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView
+{
+    [SVProgressHUD dismiss];
+}
+
 // 自动填充
 - (void)autoFill
 {
-
+    // 准备 js
+    
+    NSString *js = @"document.getElementById('userId').value = '1065750079@qq.com';document.getElementById('passwd').value = 'liuchao150134';";
+    
+    // 让 webview 执行 js
+    [self.webView stringByEvaluatingJavaScriptFromString:js];
 }
 // 退出界面
 - (void)back
 {
+    [SVProgressHUD dismiss];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
