@@ -31,6 +31,8 @@
 		A84ADAC61DCDD0210036BF0A /* WBDiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A84ADAC51DCDD0210036BF0A /* WBDiscoverViewController.m */; };
 		A84ADAC91DCDD0350036BF0A /* WBProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A84ADAC81DCDD0350036BF0A /* WBProfileViewController.m */; };
 		A84ADACC1DCDD8720036BF0A /* WBNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = A84ADACB1DCDD8720036BF0A /* WBNavigationController.m */; };
+		A8E219791E09895400745D50 /* WBUserAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = A8E219781E09895400745D50 /* WBUserAccount.m */; };
+		A8E2197C1E098EBC00745D50 /* WBUserAccountViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A8E2197B1E098EBC00745D50 /* WBUserAccountViewModel.m */; };
 		B7AE7DC2EB4354027C6D6E96 /* libPods-LiuChaoWeibo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 12E6CC78D5C68FD44A93674C /* libPods-LiuChaoWeibo.a */; };
 /* End PBXBuildFile section */
 
@@ -85,6 +87,10 @@
 		A84ADAC81DCDD0350036BF0A /* WBProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBProfileViewController.m; sourceTree = "<group>"; };
 		A84ADACA1DCDD8720036BF0A /* WBNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBNavigationController.h; sourceTree = "<group>"; };
 		A84ADACB1DCDD8720036BF0A /* WBNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBNavigationController.m; sourceTree = "<group>"; };
+		A8E219771E09895400745D50 /* WBUserAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBUserAccount.h; sourceTree = "<group>"; };
+		A8E219781E09895400745D50 /* WBUserAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBUserAccount.m; sourceTree = "<group>"; };
+		A8E2197A1E098EBC00745D50 /* WBUserAccountViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBUserAccountViewModel.h; sourceTree = "<group>"; };
+		A8E2197B1E098EBC00745D50 /* WBUserAccountViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBUserAccountViewModel.m; sourceTree = "<group>"; };
 		B00750080AFBE09C06F20B46 /* Pods-LiuChaoWeibo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LiuChaoWeibo.release.xcconfig"; path = "Pods/Target Support Files/Pods-LiuChaoWeibo/Pods-LiuChaoWeibo.release.xcconfig"; sourceTree = "<group>"; };
 		EA19938CC529974DA5BC139C /* Pods-LiuChaoWeibo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LiuChaoWeibo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LiuChaoWeibo/Pods-LiuChaoWeibo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -189,6 +195,8 @@
 		A84ADA8C1DCDCD3C0036BF0A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A8E219771E09895400745D50 /* WBUserAccount.h */,
+				A8E219781E09895400745D50 /* WBUserAccount.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -268,6 +276,8 @@
 		A84ADA941DCDCD3C0036BF0A /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				A8E2197A1E098EBC00745D50 /* WBUserAccountViewModel.h */,
+				A8E2197B1E098EBC00745D50 /* WBUserAccountViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -439,10 +449,12 @@
 				A84ADA791DCDC99C0036BF0A /* AppDelegate.m in Sources */,
 				A84ADAB81DCDCEBB0036BF0A /* UIButton+CZAddition.m in Sources */,
 				A84ADAB21DCDCEBB0036BF0A /* NSArray+Log.m in Sources */,
+				A8E219791E09895400745D50 /* WBUserAccount.m in Sources */,
 				A84ADAB31DCDCEBB0036BF0A /* NSAttributedString+CZAdditon.m in Sources */,
 				A81949011E083D4E00EA5F40 /* WBVisitorView.m in Sources */,
 				A84ADACC1DCDD8720036BF0A /* WBNavigationController.m in Sources */,
 				A84ADAB71DCDCEBB0036BF0A /* NSString+CZPath.m in Sources */,
+				A8E2197C1E098EBC00745D50 /* WBUserAccountViewModel.m in Sources */,
 				A84ADAB51DCDCEBB0036BF0A /* NSString+CZBase64.m in Sources */,
 				A84ADAB91DCDCEBB0036BF0A /* UIColor+CZAddition.m in Sources */,
 				A84ADAC91DCDD0350036BF0A /* WBProfileViewController.m in Sources */,
