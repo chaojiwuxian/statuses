@@ -60,7 +60,7 @@
 
 
 // 读取数据
-- (WBUserAccount *)loadUserAccount
++ (WBUserAccount *)loadUserAccount
 {
     NSString *path = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
     

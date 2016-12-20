@@ -37,4 +37,12 @@
 
 + (instancetype)userAccountWithDict:(NSDictionary *)dict;
 
+
+/// 保存数据
+- (void)saveAccount;
+
+/// 读取数据
++ (WBUserAccount *)loadUserAccount;
+
+
 @end

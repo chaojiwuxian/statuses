@@ -8,6 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
+#import "WBUserAccount.h"
 @interface WBUserAccountViewModel : NSObject
 
+// 单例接口
++ (instancetype)shared;
+
+// 是否登录
+- (BOOL)isLogin;
+
+- (void)requestAccountToken:(NSString *)code andCompletion:(void (^)(BOOL isSuccess))completion;
+
 @end
+

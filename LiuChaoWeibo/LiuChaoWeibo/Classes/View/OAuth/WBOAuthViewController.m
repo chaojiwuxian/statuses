@@ -7,7 +7,7 @@
 //
 
 #import "WBOAuthViewController.h"
-#import <AFNetworking.h>
+#import "WBUserAccountViewModel.h"
 #import <SVProgressHUD.h>
 
 #define client_id      @"2749473729"
@@ -63,23 +63,34 @@
         
         NSLog(@"%@",code);
         
-        // 用code去换取 token
-        AFHTTPSessionManager *manager  = [AFHTTPSessionManager manager];
-        NSDictionary *dict = @{@"client_id": client_id,
-                               @"client_secret": client_secret,
-                               @"grant_type" : @"authorization_code",
-                               @"code": code,
-                               @"redirect_uri": redirect_uri};
-        manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json",@"text/json",@"text/javascript",@"text/plain", nil];
-        
-        [manager POST:@"https://api.weibo.com/oauth2/access_token" parameters:dict progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        [[WBUserAccountViewModel shared] requestAccountToken:code andCompletion:^(BOOL isSuccess) {
             
-            NSLog(@"%@",responseObject);
+            // 如果登录成功
+            if (isSuccess) {
+                
+            }else{// 不成功
             
-        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-            NSLog(@"%@",error);
+            }
             
         }];
+        
+        // 用code去换取 token
+//        AFHTTPSessionManager *manager  = [AFHTTPSessionManager manager];
+//        NSDictionary *dict = @{@"client_id": client_id,
+//                               @"client_secret": client_secret,
+//                               @"grant_type" : @"authorization_code",
+//                               @"code": code,
+//                               @"redirect_uri": redirect_uri};
+//        manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json",@"text/json",@"text/javascript",@"text/plain", nil];
+//        
+//        [manager POST:@"https://api.weibo.com/oauth2/access_token" parameters:dict progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+//            
+//            NSLog(@"%@",responseObject);
+//            
+//        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+//            NSLog(@"%@",error);
+//            
+//        }];
         
         return NO;
     }

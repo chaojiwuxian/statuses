@@ -9,19 +9,27 @@
 #import "WBBaseViewController.h"
 #import "WBOAuthViewController.h"
 
+#import "WBUserAccountViewModel.h"
+
 @interface WBBaseViewController ()<WBVisitorViewDelegate>
 
-@property (nonatomic, assign) BOOL isLogin;
+//@property (nonatomic, assign) BOOL isLogin;
 
 @end
 
+static BOOL _isLogin;
 @implementation WBBaseViewController
+
++ (void)initialize
+{
+    // 设置登录状态
+    _isLogin = [[WBUserAccountViewModel shared] isLogin] ;
+}
 
 - (instancetype)init
 {
     if (self = [super init]) {
-        // 设置登录状态
-        self.isLogin = NO;
+        
     }
     return self;
 }
@@ -29,7 +37,7 @@
 #pragma mark 重写方法 设置控制器的跟视图
 - (void)loadView
 {
-    if (self.isLogin) {
+    if (_isLogin) {
         
         [super loadView];
     }else{
