@@ -7,6 +7,7 @@
 //
 
 #import "WBBaseViewController.h"
+#import "WBOAuthViewController.h"
 
 @interface WBBaseViewController ()<WBVisitorViewDelegate>
 
@@ -51,8 +52,12 @@
 // 注册与登录的点击事件
 - (void)btnClick
 {
-
-    NSLog(@"fadfadfa");
+    // 弹出登录 / 授权界面
+    
+    WBOAuthViewController *vc = [[WBOAuthViewController alloc]init];
+    
+    [self presentViewController:[[UINavigationController alloc] initWithRootViewController:vc] animated:YES completion:nil];
+    
 }
 
 #pragma mark WBVisitorViewDelegate
