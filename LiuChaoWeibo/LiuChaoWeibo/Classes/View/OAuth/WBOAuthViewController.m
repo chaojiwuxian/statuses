@@ -69,7 +69,8 @@
             if (isSuccess) {
                 
             }else{// 不成功
-            
+        
+                NSLog(@"登录失败");
             }
             
         }];

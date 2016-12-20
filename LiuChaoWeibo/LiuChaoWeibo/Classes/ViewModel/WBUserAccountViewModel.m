@@ -8,6 +8,7 @@
 
 #import "WBUserAccountViewModel.h"
 #import <AFNetworking.h>
+#import "WBNetworkTools.h"
 
 @interface WBUserAccountViewModel ()
 
@@ -75,8 +76,43 @@ static WBUserAccountViewModel* _instance = nil;
 - (void)requestAccountToken:(NSString *)code andCompletion:(void (^)(BOOL))completion
 {
 
+    [[WBNetworkTools shared] requestAccesstoken:code completion:^(id resObj, NSError *error) {
+        
+        // 判断请求是否有问题
+        if (error) { // 有问题
+            completion(NO);
+            
+            return ;
+        }
+        
+        // 进行字典转模型  解析数据  创建用户账户
     
+        WBUserAccount *acc = [WBUserAccount userAccountWithDict:resObj];
+        
+        //在次请求 用户信息
+        
+        [self requestUserInfo:acc andCompletion:completion];
+    }];
 }
 
+
+// 根据获取到的 token 再次请求用户信息
+- (void)requestUserInfo:(WBUserAccount *)acc andCompletion:(void (^)(BOOL))completion
+{
+
+    [[WBNetworkTools shared] requestUserInfo:acc.access_token uid:acc.uid completion:^(id resObj, NSError *error) {
+       
+        if (error) {
+            NSLog(@"%@",error);
+            
+            completion(NO);
+        }else{
+        
+            completion(YES);
+        
+        }
+    }];
+    
+}
 
 @end

@@ -16,7 +16,7 @@
 @property (nonatomic, copy) NSString *access_token;
 
 /// 用户代号
-@property (nonatomic, copy) NSString *uid;
+@property (nonatomic, assign) int64_t uid;
 
 /// access_token的生命周期，单位是秒数
 @property (nonatomic, assign) NSTimeInterval expires_in;

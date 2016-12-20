@@ -18,7 +18,7 @@
 // 创建类方法及对象方法
 + (instancetype)userAccountWithDict:(NSDictionary *)dict
 {
-  return   [[self alloc] initWithDictionary:dict];
+  return   [[self alloc] initWithDict:dict];
 }
 
 - (instancetype)initWithDict:(NSDictionary *)dict
@@ -79,7 +79,7 @@
         
         self.access_token = [aDecoder decodeObjectForKey:@"access_token"];
         self.expiresDate = [aDecoder decodeObjectForKey:@"expiresDate"];
-        self.uid = [aDecoder decodeObjectForKey:@"uid"];
+        self.uid = [aDecoder decodeInt64ForKey:@"uid"];
         self.name = [aDecoder decodeObjectForKey:@"name"];
         self.avatar_large = [aDecoder decodeObjectForKey:@"avatar_large"];
     }
@@ -90,7 +90,7 @@
 {
     [aCoder encodeObject:self.access_token forKey:@"access_token"];
     [aCoder encodeObject:self.expiresDate forKey:@"expiresDate"];
-     [aCoder encodeObject:self.uid forKey:@"uid"];
+     [aCoder encodeInt64:self.uid forKey:@"uid"];
      [aCoder encodeObject:self.name forKey:@"name"];
      [aCoder encodeObject:self.avatar_large forKey:@"avatar_large"];
 }

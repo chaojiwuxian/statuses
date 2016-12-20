@@ -33,6 +33,7 @@
 		A84ADACC1DCDD8720036BF0A /* WBNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = A84ADACB1DCDD8720036BF0A /* WBNavigationController.m */; };
 		A8E219791E09895400745D50 /* WBUserAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = A8E219781E09895400745D50 /* WBUserAccount.m */; };
 		A8E2197C1E098EBC00745D50 /* WBUserAccountViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A8E2197B1E098EBC00745D50 /* WBUserAccountViewModel.m */; };
+		A8E2197F1E09A02000745D50 /* WBNetworkTools.m in Sources */ = {isa = PBXBuildFile; fileRef = A8E2197E1E09A02000745D50 /* WBNetworkTools.m */; };
 		B7AE7DC2EB4354027C6D6E96 /* libPods-LiuChaoWeibo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 12E6CC78D5C68FD44A93674C /* libPods-LiuChaoWeibo.a */; };
 /* End PBXBuildFile section */
 
@@ -91,6 +92,8 @@
 		A8E219781E09895400745D50 /* WBUserAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBUserAccount.m; sourceTree = "<group>"; };
 		A8E2197A1E098EBC00745D50 /* WBUserAccountViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBUserAccountViewModel.h; sourceTree = "<group>"; };
 		A8E2197B1E098EBC00745D50 /* WBUserAccountViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBUserAccountViewModel.m; sourceTree = "<group>"; };
+		A8E2197D1E09A02000745D50 /* WBNetworkTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBNetworkTools.h; sourceTree = "<group>"; };
+		A8E2197E1E09A02000745D50 /* WBNetworkTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBNetworkTools.m; sourceTree = "<group>"; };
 		B00750080AFBE09C06F20B46 /* Pods-LiuChaoWeibo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LiuChaoWeibo.release.xcconfig"; path = "Pods/Target Support Files/Pods-LiuChaoWeibo/Pods-LiuChaoWeibo.release.xcconfig"; sourceTree = "<group>"; };
 		EA19938CC529974DA5BC139C /* Pods-LiuChaoWeibo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LiuChaoWeibo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LiuChaoWeibo/Pods-LiuChaoWeibo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -317,6 +320,8 @@
 		A8E219731E09862100745D50 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				A8E2197D1E09A02000745D50 /* WBNetworkTools.h */,
+				A8E2197E1E09A02000745D50 /* WBNetworkTools.m */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -443,6 +448,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A84ADABD1DCDCEBB0036BF0A /* UIViewController+CZAddition.m in Sources */,
+				A8E2197F1E09A02000745D50 /* WBNetworkTools.m in Sources */,
 				A84ADAB61DCDCEBB0036BF0A /* NSString+CZHash.m in Sources */,
 				A84ADAC31DCDCFED0036BF0A /* WBMessageViewController.m in Sources */,
 				A84ADAC01DCDCFDC0036BF0A /* WBHomeViewController.m in Sources */,
