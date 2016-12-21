@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "WBMainViewController.h"
+#import "WBOAuthViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -30,9 +31,27 @@
     
     [self.window makeKeyAndVisible];
     
+    
+    // 添加通知
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeRootVC:) name:@"SwitchRootVC" object:nil];
+    
     return YES;
 }
 
+
+#pragma mark  接收到通知会来到此方法 切换窗口的跟控制器
+- (void)changeRootVC:(NSNotification *)not
+{
+    UIViewController *vc = not.object;
+    
+    if ([vc isKindOfClass:[WBOAuthViewController class]]) {
+        
+    }else{
+    
+        self.window.rootViewController = [[WBMainViewController alloc]init];
+    }
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

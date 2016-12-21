@@ -35,6 +35,7 @@ static WBNetworkTools *_networkTool;
     dispatch_once(&onceToken, ^{
         _networkTool = [[WBNetworkTools alloc]init];
         _networkTool.manager = [AFHTTPSessionManager manager];
+        [_networkTool.manager.requestSerializer setValue:@"application/json;charset=UTF-8" forHTTPHeaderField:@"Content-Encoding"];
         _networkTool.manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json",@"text/json",@"text/javascript",@"text/plain",@"text/html", nil];
 //        _networkTool.manager.requestSerializer = [AFJSONRequestSerializer serializer];
     });
@@ -96,14 +97,16 @@ static WBNetworkTools *_networkTool;
         }];
     }else{
         
-//        "https://api.weibo.com/2/users/show.json"
-        https://api.weibo.com/2/users/show.json?access_token=2.0027DbsFTiVEAD44d36ed53f56zKKE&uid=5387417605
+//   https://api.weibo.com/2/users/show.json?access_token=2.0027DbsFTiVEAD44d36ed53f56zKKE&uid=5387417605
+//access_token=2.0027DbsFTiVEAD44d36ed53f56zKKE&uid=5387417605
         
         [self.manager GET:urlString parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
             
             completion(responseObject,nil);
             
         } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+            
+            NSLog(@"%@",error);
             completion(nil,error);
         }];
         

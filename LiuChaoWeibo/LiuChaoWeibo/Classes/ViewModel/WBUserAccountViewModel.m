@@ -107,9 +107,14 @@ static WBUserAccountViewModel* _instance = nil;
             
             completion(NO);
         }else{
-        
+            
+            // 请求成功
+            [acc setValuesForKeysWithDictionary:resObj];
+            
+            // 进行存储
+            [acc saveAccount];
+            
             completion(YES);
-        
         }
     }];
     

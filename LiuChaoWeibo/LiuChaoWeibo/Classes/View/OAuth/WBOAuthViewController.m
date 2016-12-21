@@ -68,9 +68,17 @@
             // 如果登录成功
             if (isSuccess) {
                 
+                // 退出界面 退出完成之后  发送通知 改变窗口的跟控制器
+                [self dismissViewControllerAnimated:YES completion:^{
+                   
+                    // 发送通知
+                    [[NSNotificationCenter defaultCenter] postNotificationName:@"SwitchRootVC" object:self];
+                }];
+                
             }else{// 不成功
-        
                 NSLog(@"登录失败");
+                // 退出
+                [self dismissViewControllerAnimated:YES completion:nil];
             }
             
         }];
@@ -115,7 +123,7 @@
 {
     // 准备 js
     
-    NSString *js = @"document.getElementById('userId').value = '1065750079@qq.com';document.getElementById('passwd').value = 'liuchao150134';";
+    NSString *js = @"document.getElementById('userId').value = '13366094756';document.getElementById('passwd').value = 'liuchao150134';";
     
     // 让 webview 执行 js
     [self.webView stringByEvaluatingJavaScriptFromString:js];

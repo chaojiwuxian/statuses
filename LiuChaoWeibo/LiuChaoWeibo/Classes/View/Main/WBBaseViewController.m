@@ -81,7 +81,6 @@ static BOOL _isLogin;
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"注册" style:UIBarButtonItemStylePlain target:self action:@selector(btnClick)];
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"登录" style:UIBarButtonItemStylePlain target:self action:@selector(btnClick)];
-
 }
 
 #pragma mark 数据源方法及代理方法
