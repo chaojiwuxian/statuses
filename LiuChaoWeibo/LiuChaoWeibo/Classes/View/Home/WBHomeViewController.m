@@ -9,6 +9,8 @@
 #import "WBHomeViewController.h"
 #import "WBVisitorView.h"
 
+#import "WBHomeStatusViewModel.h"
+
 @interface WBHomeViewController ()
 
 @end
@@ -34,8 +36,14 @@
 #pragma mark 加载数据
 - (void)loadData
 {
-
-
+     [[WBHomeStatusViewModel shared] loadDataCompletion:^(BOOL isSuccess) {
+        
+         if (isSuccess) {
+             
+             [self.tableView reloadData];
+         }
+         
+     }];
 }
 
 

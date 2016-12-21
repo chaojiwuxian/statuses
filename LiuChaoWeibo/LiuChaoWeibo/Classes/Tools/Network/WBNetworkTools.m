@@ -8,7 +8,7 @@
 
 #import "WBNetworkTools.h"
 #import <AFNetworking.h>
-
+#import "WBUserAccountViewModel.h"
 
 #define client_id      @"2749473729"
 #define client_secret  @"895a0f3e5034ff56832a6746f1d9c9c8"
@@ -42,6 +42,23 @@ static WBNetworkTools *_networkTool;
     
     return _networkTool;
 }
+
+#pragma mark 请求微博数据
+- (void)requestHomeStatusCompletion:(void (^)(id, NSError *))completion
+{
+    NSString *urlString = @"https://api.weibo.com/2/statuses/friends_timeline.json";
+    
+    NSString *token = [WBUserAccountViewModel shared].userAccount.access_token;
+    NSDictionary *dict = @{
+                           @"access_token" : token
+                           };
+    
+    [self request:get url:urlString params:dict completion:^(id resObj, NSError *error) {
+       
+        completion(resObj,error);
+    }];
+}
+
 
 #pragma mark 请求用户信息
 

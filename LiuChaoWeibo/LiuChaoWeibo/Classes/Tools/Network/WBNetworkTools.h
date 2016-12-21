@@ -15,6 +15,8 @@
 // 单例接口
 +(instancetype)shared;
 
+// 请求微博数据
+- (void)requestHomeStatusCompletion:(void (^)(id resObj,NSError *error))completion;
 
 // 再次请求用户信息
 - (void)requestUserInfo:(NSString *)accesstoken uid:(int64_t)uid  completion:(void (^)(id resObj,NSError *error))completion;
