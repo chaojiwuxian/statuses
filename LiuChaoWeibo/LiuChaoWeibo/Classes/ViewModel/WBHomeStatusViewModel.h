@@ -14,6 +14,10 @@
 + (instancetype)shared;
 
 
+// 盛放微博模型的数组
+@property (nonatomic, strong) NSArray *statusesArr;
+
+
 // 加载数据完成回调
 - (void)loadDataCompletion:(void (^)(BOOL isSuccess))completion;
 

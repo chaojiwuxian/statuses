@@ -10,6 +10,8 @@
 #import "WBVisitorView.h"
 
 #import "WBHomeStatusViewModel.h"
+#import "WBStatus.h"
+#import "WBUser.h"
 
 @interface WBHomeViewController ()
 
@@ -62,14 +64,16 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 20;
+    return [WBHomeStatusViewModel shared].statusesArr.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell  = [tableView dequeueReusableCellWithIdentifier:@"HomeCellID"];
     
-    cell.textLabel.text = @"fadfa";
+    WBStatus *status = [WBHomeStatusViewModel shared].statusesArr[indexPath.row];
+    
+    cell.textLabel.text = status.user.screen_name;
     
     
     return cell;

@@ -8,7 +8,8 @@
 
 #import "WBHomeStatusViewModel.h"
 #import "WBNetworkTools.h"
-
+#import <YYModel.h>
+#import "WBStatus.h"
 @implementation WBHomeStatusViewModel
 
 static WBHomeStatusViewModel *_homeStatusViewModel;
@@ -28,8 +29,16 @@ static WBHomeStatusViewModel *_homeStatusViewModel;
 {
     // 请求数据
     [[WBNetworkTools shared] requestHomeStatusCompletion:^(id resObj, NSError *error) {
-       
+    
+        if (error) {
+            completion(NO);
+        }else{
+        NSArray *statusesArr = [NSArray yy_modelArrayWithClass:[WBStatus class] json:resObj[@"statuses"]];
         
+        self.statusesArr = statusesArr;
+         
+        completion(YES);
+        }
     }];
 }
 
