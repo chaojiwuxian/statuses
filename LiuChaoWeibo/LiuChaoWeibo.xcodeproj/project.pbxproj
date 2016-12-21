@@ -31,6 +31,7 @@
 		A84ADAC61DCDD0210036BF0A /* WBDiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A84ADAC51DCDD0210036BF0A /* WBDiscoverViewController.m */; };
 		A84ADAC91DCDD0350036BF0A /* WBProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A84ADAC81DCDD0350036BF0A /* WBProfileViewController.m */; };
 		A84ADACC1DCDD8720036BF0A /* WBNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = A84ADACB1DCDD8720036BF0A /* WBNavigationController.m */; };
+		A8D9214A1E0AF09B00AD7025 /* WBWelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8D921491E0AF09B00AD7025 /* WBWelcomeViewController.m */; };
 		A8E219791E09895400745D50 /* WBUserAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = A8E219781E09895400745D50 /* WBUserAccount.m */; };
 		A8E2197C1E098EBC00745D50 /* WBUserAccountViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A8E2197B1E098EBC00745D50 /* WBUserAccountViewModel.m */; };
 		A8E2197F1E09A02000745D50 /* WBNetworkTools.m in Sources */ = {isa = PBXBuildFile; fileRef = A8E2197E1E09A02000745D50 /* WBNetworkTools.m */; };
@@ -88,6 +89,8 @@
 		A84ADAC81DCDD0350036BF0A /* WBProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBProfileViewController.m; sourceTree = "<group>"; };
 		A84ADACA1DCDD8720036BF0A /* WBNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBNavigationController.h; sourceTree = "<group>"; };
 		A84ADACB1DCDD8720036BF0A /* WBNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBNavigationController.m; sourceTree = "<group>"; };
+		A8D921481E0AF09B00AD7025 /* WBWelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBWelcomeViewController.h; sourceTree = "<group>"; };
+		A8D921491E0AF09B00AD7025 /* WBWelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBWelcomeViewController.m; sourceTree = "<group>"; };
 		A8E219771E09895400745D50 /* WBUserAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBUserAccount.h; sourceTree = "<group>"; };
 		A8E219781E09895400745D50 /* WBUserAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBUserAccount.m; sourceTree = "<group>"; };
 		A8E2197A1E098EBC00745D50 /* WBUserAccountViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBUserAccountViewModel.h; sourceTree = "<group>"; };
@@ -216,6 +219,7 @@
 		A84ADA8E1DCDCD3C0036BF0A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A8D921471E0AF08000AD7025 /* Welcome */,
 				A82754711E08F48700C1ED18 /* OAuth */,
 				A84ADA911DCDCD3C0036BF0A /* Main */,
 				A84ADA901DCDCD3C0036BF0A /* Home */,
@@ -315,6 +319,15 @@
 				A84ADAB11DCDCEBB0036BF0A /* UIViewController+CZAddition.m */,
 			);
 			path = Additions;
+			sourceTree = "<group>";
+		};
+		A8D921471E0AF08000AD7025 /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				A8D921481E0AF09B00AD7025 /* WBWelcomeViewController.h */,
+				A8D921491E0AF09B00AD7025 /* WBWelcomeViewController.m */,
+			);
+			path = Welcome;
 			sourceTree = "<group>";
 		};
 		A8E219731E09862100745D50 /* Network */ = {
@@ -470,6 +483,7 @@
 				A84ADABA1DCDCEBB0036BF0A /* UILabel+CZAddition.m in Sources */,
 				A84ADA761DCDC99C0036BF0A /* main.m in Sources */,
 				A84ADABB1DCDCEBB0036BF0A /* UIScreen+CZAddition.m in Sources */,
+				A8D9214A1E0AF09B00AD7025 /* WBWelcomeViewController.m in Sources */,
 				A84ADAB41DCDCEBB0036BF0A /* NSObject+CZRuntime.m in Sources */,
 				A84ADABC1DCDCEBB0036BF0A /* UIView+CZAddition.m in Sources */,
 				A8152B411DD9E37D00ADEF53 /* WBBaseViewController.m in Sources */,

@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "WBMainViewController.h"
 #import "WBOAuthViewController.h"
+#import "WBWelcomeViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -47,9 +48,11 @@
     
     if ([vc isKindOfClass:[WBOAuthViewController class]]) {
         
+    self.window.rootViewController = [[WBWelcomeViewController alloc]init];
+        
     }else{
     
-        self.window.rootViewController = [[WBMainViewController alloc]init];
+    self.window.rootViewController = [[WBMainViewController alloc]init];
     }
 }
 
