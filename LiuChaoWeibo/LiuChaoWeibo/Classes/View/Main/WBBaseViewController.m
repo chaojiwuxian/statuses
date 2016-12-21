@@ -13,7 +13,7 @@
 
 @interface WBBaseViewController ()<WBVisitorViewDelegate>
 
-//@property (nonatomic, assign) BOOL isLogin;
+@property (nonatomic, assign) BOOL isLogin;
 
 @end
 
@@ -23,13 +23,13 @@ static BOOL _isLogin;
 + (void)initialize
 {
     // 设置登录状态
-    _isLogin = [[WBUserAccountViewModel shared] isLogin] ;
+//    _isLogin = [[WBUserAccountViewModel shared] isLogin] ;
 }
 
 - (instancetype)init
 {
     if (self = [super init]) {
-        
+        self.isLogin = [[WBUserAccountViewModel shared] isLogin];
     }
     return self;
 }

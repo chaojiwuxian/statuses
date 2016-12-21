@@ -14,6 +14,9 @@
 // 单例接口
 + (instancetype)shared;
 
+// 账号模型
+@property (nonatomic, strong) WBUserAccount *userAccount;
+
 // 是否登录
 - (BOOL)isLogin;
 

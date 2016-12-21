@@ -15,8 +15,7 @@
 // 令牌
 @property (nonatomic, copy) NSString *accessToken;
 
-// 账号模型
-@property (nonatomic, strong) WBUserAccount *userAccount;
+
 
 @end
 
