@@ -14,4 +14,7 @@
 // 记录访客视图
 @property (nonatomic, weak)WBVisitorView *visitorView;
 
+// 是否登录
+@property (nonatomic, assign) BOOL isLogin;
+
 @end
