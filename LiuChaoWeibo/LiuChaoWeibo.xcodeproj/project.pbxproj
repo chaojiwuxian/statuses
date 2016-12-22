@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		A8152B411DD9E37D00ADEF53 /* WBBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8152B401DD9E37D00ADEF53 /* WBBaseViewController.m */; };
 		A81949011E083D4E00EA5F40 /* WBVisitorView.m in Sources */ = {isa = PBXBuildFile; fileRef = A81949001E083D4E00EA5F40 /* WBVisitorView.m */; };
+		A81C4D6D1E0C3CB200997CD7 /* WBStatusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A81C4D6C1E0C3CB200997CD7 /* WBStatusCell.m */; };
+		A81C4D701E0C3CE200997CD7 /* WBOriginalView.m in Sources */ = {isa = PBXBuildFile; fileRef = A81C4D6F1E0C3CE200997CD7 /* WBOriginalView.m */; };
 		A82754741E08F4B600C1ED18 /* WBOAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A82754731E08F4B600C1ED18 /* WBOAuthViewController.m */; };
 		A84ADA761DCDC99C0036BF0A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A84ADA751DCDC99C0036BF0A /* main.m */; };
 		A84ADA791DCDC99C0036BF0A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A84ADA781DCDC99C0036BF0A /* AppDelegate.m */; };
@@ -47,6 +49,10 @@
 		A8152B401DD9E37D00ADEF53 /* WBBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBBaseViewController.m; sourceTree = "<group>"; };
 		A81948FF1E083D4E00EA5F40 /* WBVisitorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBVisitorView.h; sourceTree = "<group>"; };
 		A81949001E083D4E00EA5F40 /* WBVisitorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBVisitorView.m; sourceTree = "<group>"; };
+		A81C4D6B1E0C3CB200997CD7 /* WBStatusCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBStatusCell.h; sourceTree = "<group>"; };
+		A81C4D6C1E0C3CB200997CD7 /* WBStatusCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBStatusCell.m; sourceTree = "<group>"; };
+		A81C4D6E1E0C3CE200997CD7 /* WBOriginalView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBOriginalView.h; sourceTree = "<group>"; };
+		A81C4D6F1E0C3CE200997CD7 /* WBOriginalView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBOriginalView.m; sourceTree = "<group>"; };
 		A82754721E08F4B600C1ED18 /* WBOAuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBOAuthViewController.h; sourceTree = "<group>"; };
 		A82754731E08F4B600C1ED18 /* WBOAuthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBOAuthViewController.m; sourceTree = "<group>"; };
 		A84ADA711DCDC99C0036BF0A /* LiuChaoWeibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LiuChaoWeibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -146,6 +152,17 @@
 				A81949001E083D4E00EA5F40 /* WBVisitorView.m */,
 			);
 			path = VisitorView;
+			sourceTree = "<group>";
+		};
+		A81C4D6A1E0C3C2C00997CD7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A81C4D6B1E0C3CB200997CD7 /* WBStatusCell.h */,
+				A81C4D6C1E0C3CB200997CD7 /* WBStatusCell.m */,
+				A81C4D6E1E0C3CE200997CD7 /* WBOriginalView.h */,
+				A81C4D6F1E0C3CE200997CD7 /* WBOriginalView.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		A82754711E08F48700C1ED18 /* OAuth */ = {
@@ -255,6 +272,7 @@
 		A84ADA901DCDCD3C0036BF0A /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				A81C4D6A1E0C3C2C00997CD7 /* View */,
 				A84ADABE1DCDCFDC0036BF0A /* WBHomeViewController.h */,
 				A84ADABF1DCDCFDC0036BF0A /* WBHomeViewController.m */,
 			);
@@ -478,6 +496,7 @@
 				A84ADABD1DCDCEBB0036BF0A /* UIViewController+CZAddition.m in Sources */,
 				A8E2197F1E09A02000745D50 /* WBNetworkTools.m in Sources */,
 				A84ADAB61DCDCEBB0036BF0A /* NSString+CZHash.m in Sources */,
+				A81C4D6D1E0C3CB200997CD7 /* WBStatusCell.m in Sources */,
 				A84ADAC31DCDCFED0036BF0A /* WBMessageViewController.m in Sources */,
 				A84ADAC01DCDCFDC0036BF0A /* WBHomeViewController.m in Sources */,
 				A84ADA791DCDC99C0036BF0A /* AppDelegate.m in Sources */,
@@ -494,6 +513,7 @@
 				A84ADAB51DCDCEBB0036BF0A /* NSString+CZBase64.m in Sources */,
 				A84ADAB91DCDCEBB0036BF0A /* UIColor+CZAddition.m in Sources */,
 				A84ADAC91DCDD0350036BF0A /* WBProfileViewController.m in Sources */,
+				A81C4D701E0C3CE200997CD7 /* WBOriginalView.m in Sources */,
 				A8D921531E0B046500AD7025 /* WBUser.m in Sources */,
 				A84ADA971DCDCDC50036BF0A /* WBMainViewController.m in Sources */,
 				A82754741E08F4B600C1ED18 /* WBOAuthViewController.m in Sources */,

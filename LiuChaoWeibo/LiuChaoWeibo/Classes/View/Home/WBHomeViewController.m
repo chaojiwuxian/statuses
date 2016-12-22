@@ -75,7 +75,6 @@
     
     cell.textLabel.text = status.user.screen_name;
     
-    
     return cell;
 }
 
