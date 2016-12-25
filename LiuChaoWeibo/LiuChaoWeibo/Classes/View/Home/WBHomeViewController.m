@@ -13,6 +13,7 @@
 #import "WBStatus.h"
 #import "WBUser.h"
 
+#import "WBStatusCell.h"
 @interface WBHomeViewController ()
 
 @end
@@ -53,7 +54,7 @@
 - (void)setUpUI
 {
     // tableView 相关
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"HomeCellID"];
+    [self.tableView registerClass:[WBStatusCell class] forCellReuseIdentifier:@"HomeCellID"];
     self.tableView.estimatedRowHeight = 200;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.tableView.separatorStyle = UITableViewCellSelectionStyleNone;
@@ -69,11 +70,11 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell  = [tableView dequeueReusableCellWithIdentifier:@"HomeCellID"];
+    WBStatusCell *cell  = [tableView dequeueReusableCellWithIdentifier:@"HomeCellID"];
     
     WBStatus *status = [WBHomeStatusViewModel shared].statusesArr[indexPath.row];
     
-    cell.textLabel.text = status.user.screen_name;
+    cell.status = status;
     
     return cell;
 }

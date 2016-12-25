@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@class WBStatus;
+
 @interface WBStatusCell : UITableViewCell
+
+// 一条微博数据
+@property (nonatomic, strong) WBStatus *status;
 
 @end

@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+@class WBStatus;
 @interface WBOriginalView : UIView
+
+@property (nonatomic, strong) WBStatus *status;
 
 @end
