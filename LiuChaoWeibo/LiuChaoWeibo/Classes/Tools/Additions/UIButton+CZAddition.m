@@ -60,6 +60,8 @@
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
     [btn setImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
     [btn setBackgroundImage:[UIImage imageNamed:backgroundImageName] forState:UIControlStateNormal];
+    NSString *backgroundImageNameHL = [backgroundImageName stringByAppendingString:@"_highlighted"];
+    [btn setBackgroundImage:[UIImage imageNamed:backgroundImageNameHL] forState:UIControlStateHighlighted];
     [btn setTitleColor:normalColor forState:UIControlStateNormal];
     [btn setTitle:title forState:UIControlStateNormal];
     btn.titleLabel.font = [UIFont systemFontOfSize:fontSize];

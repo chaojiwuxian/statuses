@@ -12,6 +12,7 @@
 #import "WBStatus.h"
 
 #import "WBOriginalView.h"
+#import "WBToolBar.h"
 
 @interface WBStatusCell ()
 
@@ -51,6 +52,9 @@
     WBOriginalView *originalView = [[WBOriginalView alloc]init];
     [self.contentView addSubview:originalView];
     
+    // toolBar
+    WBToolBar *toolBar = [[WBToolBar alloc]init];
+    [self.contentView addSubview:toolBar];
     
     // 属性赋值
     self.originalView = originalView;
@@ -59,7 +63,15 @@
     // 设置约束
     [originalView mas_makeConstraints:^(MASConstraintMaker *make) {
        
-        make.top.left.right.bottom.equalTo(self.contentView);
+        make.top.left.right.equalTo(self.contentView);
+    }];
+    
+    [toolBar mas_makeConstraints:^(MASConstraintMaker *make) {
+       
+        make.top.equalTo(originalView.mas_bottom);
+        make.left.right.equalTo(originalView);
+        make.height.mas_equalTo(36);
+        make.bottom.equalTo(self.contentView);
     }];
     
 }
