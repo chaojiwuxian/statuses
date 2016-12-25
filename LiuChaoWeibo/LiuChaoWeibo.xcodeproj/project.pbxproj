@@ -12,6 +12,7 @@
 		A81C4D6D1E0C3CB200997CD7 /* WBStatusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A81C4D6C1E0C3CB200997CD7 /* WBStatusCell.m */; };
 		A81C4D701E0C3CE200997CD7 /* WBOriginalView.m in Sources */ = {isa = PBXBuildFile; fileRef = A81C4D6F1E0C3CE200997CD7 /* WBOriginalView.m */; };
 		A82754741E08F4B600C1ED18 /* WBOAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A82754731E08F4B600C1ED18 /* WBOAuthViewController.m */; };
+		A82B7A581E0FB59900FA9D88 /* WBToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = A82B7A571E0FB59900FA9D88 /* WBToolBar.m */; };
 		A84ADA761DCDC99C0036BF0A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A84ADA751DCDC99C0036BF0A /* main.m */; };
 		A84ADA791DCDC99C0036BF0A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A84ADA781DCDC99C0036BF0A /* AppDelegate.m */; };
 		A84ADA811DCDC99C0036BF0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A84ADA801DCDC99C0036BF0A /* Assets.xcassets */; };
@@ -55,6 +56,8 @@
 		A81C4D6F1E0C3CE200997CD7 /* WBOriginalView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBOriginalView.m; sourceTree = "<group>"; };
 		A82754721E08F4B600C1ED18 /* WBOAuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBOAuthViewController.h; sourceTree = "<group>"; };
 		A82754731E08F4B600C1ED18 /* WBOAuthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBOAuthViewController.m; sourceTree = "<group>"; };
+		A82B7A561E0FB59900FA9D88 /* WBToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBToolBar.h; sourceTree = "<group>"; };
+		A82B7A571E0FB59900FA9D88 /* WBToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBToolBar.m; sourceTree = "<group>"; };
 		A84ADA711DCDC99C0036BF0A /* LiuChaoWeibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LiuChaoWeibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A84ADA751DCDC99C0036BF0A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A84ADA771DCDC99C0036BF0A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -161,6 +164,8 @@
 				A81C4D6C1E0C3CB200997CD7 /* WBStatusCell.m */,
 				A81C4D6E1E0C3CE200997CD7 /* WBOriginalView.h */,
 				A81C4D6F1E0C3CE200997CD7 /* WBOriginalView.m */,
+				A82B7A561E0FB59900FA9D88 /* WBToolBar.h */,
+				A82B7A571E0FB59900FA9D88 /* WBToolBar.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -500,6 +505,7 @@
 				A84ADAC31DCDCFED0036BF0A /* WBMessageViewController.m in Sources */,
 				A84ADAC01DCDCFDC0036BF0A /* WBHomeViewController.m in Sources */,
 				A84ADA791DCDC99C0036BF0A /* AppDelegate.m in Sources */,
+				A82B7A581E0FB59900FA9D88 /* WBToolBar.m in Sources */,
 				A84ADAB81DCDCEBB0036BF0A /* UIButton+CZAddition.m in Sources */,
 				A84ADAB21DCDCEBB0036BF0A /* NSArray+Log.m in Sources */,
 				A8D9214D1E0AFB0800AD7025 /* WBHomeStatusViewModel.m in Sources */,
