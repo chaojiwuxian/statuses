@@ -9,6 +9,9 @@
 
 @interface UIButton (CZAddition)
 
+
+
+
 /**
  创建文本按钮
 
@@ -44,5 +47,19 @@
  @return UIButton
  */
 + (instancetype)cz_imageButton:(NSString *)imageName backgroundImageName:(NSString *)backgroundImageName;
+
+
+
+/**
+ 创建图像+文本按钮
+
+ @param title 文字
+ @param fontSize 大小
+ @param normalColor 颜色
+ @param imageName 普通图片
+ @param backgroundImageName 背景图片 状态
+ @return UIButton
+ */
++ (instancetype)cz_textButton:(NSString *)title fontSize:(CGFloat)fontSize normalColor:(UIColor *)normalColor normalImageName:(NSString *)imageName backgroundImageName:(NSString *)backgroundImageName;
 
 @end

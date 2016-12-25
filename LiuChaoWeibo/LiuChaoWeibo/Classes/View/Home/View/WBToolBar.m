@@ -8,6 +8,10 @@
 
 #import "WBToolBar.h"
 
+#import "CZAdditions.h"
+
+#import <Masonry.h>
+
 @implementation WBToolBar
 
 - (instancetype)initWithFrame:(CGRect)frame
@@ -23,18 +27,55 @@
 - (void)setUpUI
 {
     // 转发
-    UIButton *reweetButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    UIButton *reweetButton = [UIButton cz_textButton:@"转发" fontSize:14 normalColor:[UIColor grayColor] normalImageName:@"timeline_icon_retweet" backgroundImageName:@"timeline_card_bottom_background"];
     [self addSubview:reweetButton];
-    [reweetButton setImage:[UIImage imageNamed:@"timeline_icon_retweet"] forState:UIControlStateNormal];
-    [reweetButton setBackgroundImage:[UIImage imageNamed:@"timeline_card_bottom_background"] forState:UIControlStateNormal];
-    [reweetButton setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
-    [reweetButton setTitle:@"转发" forState:UIControlStateNormal];
-    reweetButton.titleLabel.font = [UIFont systemFontOfSize:14];
     
     // 评论
+    UIButton *commentButton = [UIButton cz_textButton:@"评论" fontSize:14 normalColor:[UIColor grayColor] normalImageName:@"timeline_icon_comment" backgroundImageName:@"timeline_card_bottom_background"];
+    [self addSubview:commentButton];
     
     // 赞
+    UIButton *unlikeButton = [UIButton cz_textButton:@"赞" fontSize:14 normalColor:[UIColor grayColor] normalImageName:@"timeline_icon_unlike" backgroundImageName:@"timeline_card_bottom_background"];
+    [self addSubview:unlikeButton];
     
+    // 分割线1
+    UIImageView *firsrLine = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"timeline_card_bottom_line"]];
+    [self addSubview:firsrLine];
+    // 分割线2
+    UIImageView *secondLine = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"timeline_card_bottom_line"]];
+    [self addSubview:secondLine];
+    
+    // 添加约束
+    [reweetButton mas_makeConstraints:^(MASConstraintMaker *make) {
+       
+        make.top.left.bottom.equalTo(self);
+    }];
+    
+    [commentButton mas_makeConstraints:^(MASConstraintMaker *make) {
+       
+        make.top.bottom.equalTo(self);
+        make.left.equalTo(reweetButton.mas_right);
+        make.width.equalTo(reweetButton);
+    }];
+    
+    [unlikeButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.bottom.right.equalTo(self);
+        make.left.equalTo(commentButton.mas_right);
+        make.width.equalTo(commentButton);
+        
+    }];
+    
+    [firsrLine mas_makeConstraints:^(MASConstraintMaker *make) {
+       
+        make.centerX.equalTo(reweetButton.mas_right);
+        make.centerY.equalTo(self);
+    }];
+    
+    [secondLine mas_makeConstraints:^(MASConstraintMaker *make) {
+       
+        make.centerX.equalTo(commentButton.mas_right);
+        make.centerY.equalTo(self);
+    }];
 }
 
 @end
